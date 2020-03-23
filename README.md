@@ -13,10 +13,10 @@ $ npm run serve
 * [x] Upload
 * [x] Dropdown
 * [x] Chat
-* [] Input
-* [] Numeric TextBox
-* [] Popup
-* [] Themes
+* [ ] Input
+* [ ] Numeric TextBox
+* [ ] Popup
+* [ ] Themes
 
 ### server
 
