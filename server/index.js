@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const multer  = require('multer');
 const cors = require('cors');
@@ -11,16 +13,18 @@ const upload = multer({
       cb(null, 'uploads/');
     },
     filename: function (req, file, cb) {
-      console.log('file', file);
       cb(null, file.originalname);
     }
   }),
 });
 
 app.post('/upload', upload.array('files'), (req, res, next) => {
-  console.log('upload');
-  console.log('req', req.files)
   res.sendStatus(201);
+});
+
+app.post('/remove', (req, res, next) => {
+  console.log('remove');
+  res.sendStatus(200);
 });
 
 app.listen(3000, () => {
