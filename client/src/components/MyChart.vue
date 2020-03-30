@@ -38,8 +38,8 @@ import { Chart } from '@progress/kendo-charts-vue-wrapper';
 export default {
   mounted() {
     setTimeout(() => {
-      this.loading = false
-    }, 100)
+      this.loading = false;
+    }, 100);
   },
   components: {
     Chart

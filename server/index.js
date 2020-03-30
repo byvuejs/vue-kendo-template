@@ -19,14 +19,13 @@ const upload = multer({
 });
 
 app.post('/upload', upload.array('files'), (req, res, next) => {
-  res.sendStatus(201);
+  res.status(201).json(req.files);
 });
 
 app.post('/remove', (req, res, next) => {
-  console.log('remove');
   res.sendStatus(200);
 });
 
 app.listen(3000, () => {
-    console.log('server on, 3000');
+    console.log('server on, http://localhost:3000');
 });

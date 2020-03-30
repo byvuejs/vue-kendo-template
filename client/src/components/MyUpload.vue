@@ -6,7 +6,7 @@
                             name="files"
                             :async-save-url="'http://localhost:3000/upload'"
                             :async-remove-url="'http://localhost:3000/remove'"
-                            :localization-select="'Browse...'">
+                            :localization-select="'Upload...'">
                 </kendo-upload>
             </div>
         </div>
@@ -28,11 +28,6 @@ export default {
         return {
             files: []
         };
-    },
-    methods: {
-        pause() {
-            console.log('pause')
-        }
     },
     mounted() {
         var upload = this.$refs.upload.kendoWidget();

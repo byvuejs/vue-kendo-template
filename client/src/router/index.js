@@ -3,16 +3,6 @@ import Router from 'vue-router';
 
 Vue.use(Router);
 
-// lazy load
-const HomeComponent = () => import(/* webpackChunkName: "Home" */ '@/components/Home');
-const FormComponent = () => import(/* webpackChunkName: "Form" */ '@/components/MyForm');
-const GridComponent = () => import(/* webpackChunkName: "Grid" */ '@/components/MyGrid');
-const ChartComponent = () => import(/* webpackChunkName: "Chart" */ '@/components/MyChart');
-const DialogComponent = () => import(/* webpackChunkName: "Dialog" */ '@/components/MyDialog');
-const UploadComponent = () => import(/* webpackChunkName: "Upload" */ '@/components/MyUpload');
-const DropdownComponent = () => import(/* webpackChunkName: "Dropdown" */ '@/components/MyDropdown');
-const ChatComponent = () => import(/* webpackChunkName: "Chat" */ '@/components/MyChat');
-
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
@@ -20,42 +10,42 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: HomeComponent
+      component: () => import(/* webpackChunkName: "Home" */ '@/components/Home')
     }
     ,{
       path: '/form',
       name: 'Form',
-      component: FormComponent
+      component: () => import(/* webpackChunkName: "Form" */ '@/components/MyForm')
     }
     ,{
       path: '/grid',
       name: 'Grid',
-      component: GridComponent
+      component: () => import(/* webpackChunkName: "Grid" */ '@/components/MyGrid')
     }
     ,{
       path: '/chart',
       name: 'Chart',
-      component: ChartComponent
+      component: () => import(/* webpackChunkName: "Chart" */ '@/components/MyChart')
     },
     {
       path: '/dialog',
       name: 'Dialog',
-      component: DialogComponent
+      component: () => import(/* webpackChunkName: "Dialog" */ '@/components/MyDialog')
     },
     {
       path: '/upload',
       name: 'Upload',
-      component: UploadComponent
+      component: () => import(/* webpackChunkName: "Upload" */ '@/components/MyUpload')
     },
     {
       path: '/dropdown',
       name: 'Dropdown',
-      component: DropdownComponent
+      component: () => import(/* webpackChunkName: "Dropdown" */ '@/components/MyDropdown')
     },
     {
       path: '/chat',
       name: 'Chat',
-      component: ChatComponent
+      component: () => import(/* webpackChunkName: "Chat" */ '@/components/MyChat')
     },
     {
       path: '/*',
